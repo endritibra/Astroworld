@@ -1,4 +1,17 @@
 ---
+const pageTitle="About me";
+const edi={
+    firstName:"Edi",
+    lastName:"Ibraimi",
+    occupation:"Front End",
+    hobbies:["coding","football","movies"]
+}
+const skills=["HTML","CSS","HUBL","JS"]
+const happy=true;
+const finished=false;
+const goal=3;
+
+
 ---
 
 <html lang="en">
@@ -7,16 +20,24 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>About Page</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
         <a href="/">Home</a>
 <a href="/about/">About</a>
 <a href="/blog/">Blog</a>
 
-		<h2> About Page </h2>
+		<h2> {pageTitle}</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam sint velit dicta. Exercitationem quidem quod quas, numquam blanditiis dolore. Rem dolor magni amet assumenda quis incidunt delectus voluptates sunt tempore!
 
         </p>
+        Who Am I ?
+        <p>{edi.firstName}</p>
+        <p>My skills:</p>
+        {skills.map((skill)=>(
+            <li>{skill}</li>
+        ))}
+        {happy && <p>Happy to learn Astro</p>}
+        {goal===3 ? <p>I will finish thi sfaster then 3  days</p> : <p>I will need more then three days</p>}
 	</body>
 </html>
