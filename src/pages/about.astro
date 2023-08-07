@@ -1,4 +1,9 @@
 ---
+import '../styles/global.css'
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro'
+
+
 const pageTitle="About me";
 const edi={
     firstName:"Edi",
@@ -10,7 +15,8 @@ const skills=["HTML","CSS","HUBL","JS"]
 const happy=true;
 const finished=false;
 const goal=3;
-
+const skillColor="navy";
+const fontWeight=700;
 
 ---
 
@@ -21,11 +27,24 @@ const goal=3;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+        <style define:vars={{skillColor,fontWeight}}>
+            h2{
+                color:#205E61;
+                font-size:3rem;
+                font-weight:var(--fontWeight);
+            }
+            .skill{
+                color: #F9F54B;
+    font-weight: bold;
+    background-color:#205E61;
+    border:1px solid var(--skillColor);
+            }
+        </style>
 	</head>
 	<body>
-        <a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+        <Header/>
+        <div class="container">
+      
 
 		<h2> {pageTitle}</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam sint velit dicta. Exercitationem quidem quod quas, numquam blanditiis dolore. Rem dolor magni amet assumenda quis incidunt delectus voluptates sunt tempore!
@@ -35,9 +54,14 @@ const goal=3;
         <p>{edi.firstName}</p>
         <p>My skills:</p>
         {skills.map((skill)=>(
-            <li>{skill}</li>
+            <li class="skill">{skill}</li>
         ))}
         {happy && <p>Happy to learn Astro</p>}
         {goal===3 ? <p>I will finish thi sfaster then 3  days</p> : <p>I will need more then three days</p>}
-	</body>
+        </div>
+        <Footer footerName="About"/>
+        <script>
+            import "../scripts/menu.js";
+          </script>
+    </body>
 </html>
