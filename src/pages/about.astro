@@ -2,7 +2,7 @@
 import '../styles/global.css'
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro'
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle="About me";
 const edi={
@@ -20,33 +20,10 @@ const fontWeight=700;
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-        <style define:vars={{skillColor,fontWeight}}>
-            h2{
-                color:#205E61;
-                font-size:3rem;
-                font-weight:var(--fontWeight);
-            }
-            .skill{
-                color: #F9F54B;
-    font-weight: bold;
-    background-color:#205E61;
-    border:1px solid var(--skillColor);
-            }
-        </style>
-	</head>
-	<body>
-        <Header/>
-        <div class="container">
+<BaseLayout pageTitle={pageTitle}>
+    <div class="container">
       
 
-		<h2> {pageTitle}</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam sint velit dicta. Exercitationem quidem quod quas, numquam blanditiis dolore. Rem dolor magni amet assumenda quis incidunt delectus voluptates sunt tempore!
 
         </p>
@@ -59,9 +36,4 @@ const fontWeight=700;
         {happy && <p>Happy to learn Astro</p>}
         {goal===3 ? <p>I will finish thi sfaster then 3  days</p> : <p>I will need more then three days</p>}
         </div>
-        <Footer footerName="About"/>
-        <script>
-            import "../scripts/menu.js";
-          </script>
-    </body>
-</html>
+    </BaseLayout>

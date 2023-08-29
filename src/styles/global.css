@@ -1,11 +1,24 @@
 :root{
-    --primary-color:#1d1e1f;
-    --accent-color:#a8ea0c;
+    
     --secondary-color:#ad2525;
     --spacing:80px 0;
     --text-color-white:white;
 
 }
+.wrapper{
+  --primary-color:#1d1e1f;
+  --accent-color:#a8ea0c;
+}
+.theme_switcher{
+  position: absolute;
+  right: 0;
+}
+.theme_switcher:checked ~ .wrapper{
+  --primary-color: rgb(31, 165, 255);
+--accent-color: rgb(0, 25, 212);
+
+}
+
 
 html {
     background-color: white;
@@ -20,7 +33,7 @@ html {
     line-height: 1.5;
   }
   .container{
-    max-width: 1100px;
+    max-width: 1200px;
     margin:0 auto;
   }
 
@@ -56,6 +69,7 @@ html {
     background-color: var(--accent-color);
    display:none;
     margin: 0;
+    
   }
   
   .nav-links a {
@@ -68,6 +82,7 @@ html {
     text-transform: uppercase;
     color:black;
     position:relative;
+
   }
   
   .nav-links a:hover, a:focus {
@@ -115,3 +130,5 @@ html {
     }
   
   }
+
+
