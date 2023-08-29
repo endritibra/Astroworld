@@ -1,13 +1,13 @@
 :root{
     
-    --secondary-color:#ad2525;
+    --secondary-color:white;
     --spacing:80px 0;
     --text-color-white:white;
 
 }
 .wrapper{
   --primary-color:#1d1e1f;
-  --accent-color:#a8ea0c;
+  --accent-color:crimson;
 }
 .theme_switcher{
   position: absolute;
@@ -132,3 +132,23 @@ html {
   }
 
 
+.dynamicMapping{
+  list-style-type:none;
+  display: flex;
+  flex-direction: row;
+  gap:1rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+.dynamicMapping li{
+  height: auto;
+  max-width: 250px;
+  background-color:whitesmoke;
+  padding: 1rem 0.5rem;
+}
+.dynamicMapping li a{
+  text-decoration: none;
+}
+.dynamicMapping img{
+  max-width: 100%;
+}
